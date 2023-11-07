@@ -10,10 +10,13 @@ const teacherSlice = createSlice({
   name: "teacher",
   initialState: teacherInitialState,
   reducers: {
+    setName(state, actions) {
+      state.catQuestioName = actions.payload;
+      console.log(actions.payload);
+    },
     categoriesAction(state, actions) {
       const array = actions.payload;
       state.categories = array;
-      // console.log("fromRTK", array);
     },
     editCategories(state, actions) {
       const array = actions.payload;

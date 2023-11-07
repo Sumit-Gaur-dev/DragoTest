@@ -48,6 +48,11 @@ function Categories() {
     seQuestionName(e.target.value)
     
   }
+  const seNameToTheState = () =>{
+    if(questionName !== "" ){
+      dispatch(teacherActions.setName(questionName));
+    }
+  }
 
   // ADDING NEW STATE
   const [categories,setCategories] = useState([])
@@ -92,6 +97,7 @@ function Categories() {
           name="questionName"
           value={questionName}
           onChange={nameChangeHandler}
+          onBlur={seNameToTheState}
           className="w-full border border-gray-300 p-2 rounded"
           required
         />
