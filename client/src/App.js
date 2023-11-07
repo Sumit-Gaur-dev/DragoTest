@@ -5,9 +5,6 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-
-      {/* <Portal/>
-    <Student /> */}
       <Teacher />
     </div>
   );

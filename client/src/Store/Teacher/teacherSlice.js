@@ -3,12 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const teacherInitialState = {
   catQuestioName: "",
   categories: [],
-  ans: [
-    {
-      element: "",
-      blongsTo: "",
-    },
-  ],
+  ans: [],
 };
 
 const teacherSlice = createSlice({
@@ -26,6 +21,14 @@ const teacherSlice = createSlice({
     },
     deleteState(state, actions) {
       state.categories.splice(actions.payload, 1);
+    },
+
+    anwerSave(state, actions) {
+      const newAnswer = actions.payload;
+      state.ans.push(newAnswer);
+    },
+    anwerDelete(state, actions) {
+      state.ans.splice(actions.payload, 1);
     },
   },
 });
